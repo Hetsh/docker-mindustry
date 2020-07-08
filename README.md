@@ -3,7 +3,7 @@ Super small and simple vanilla mindustry server.
 
 ## Running the server
 ```bash
-docker run --detach --interactive --name mindustry --publish 25565:25565 hetsh/mindustry
+docker run --detach --interactive --name mindustry --publish 6567:6567 hetsh/mindustry
 ```
 `--interactive` enables passing commands to the running server (required for shutdown).
 
