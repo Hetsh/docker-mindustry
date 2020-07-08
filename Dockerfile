@@ -15,7 +15,8 @@ RUN chmod 644 "$APP_BIN"
 
 # EULA and Volumes
 ARG DATA_DIR="/mindustry"
-RUN mkdir "$DATA_DIR"
+RUN mkdir "$DATA_DIR" && \
+    chown -R "$APP_USER":"$APP_USER" "$DATA_DIR"
 VOLUME ["$DATA_DIR"]
 
 #      GAME     STATUS
