@@ -20,7 +20,8 @@ fi
 
 # Build the image
 APP_NAME="mindustry"
-docker build --tag "$APP_NAME" .
+APP_TAG="hetsh/$APP_NAME"
+docker build --tag "$APP_TAG" .
 
 # Start the test
 if confirm_action "Test image?"; then
@@ -32,5 +33,5 @@ if confirm_action "Test image?"; then
 	--publish 6567:6567/udp \
 	--mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
 	--name "$APP_NAME" \
-	"$APP_NAME"
+	"$APP_TAG"
 fi
