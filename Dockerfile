@@ -1,6 +1,6 @@
 FROM library/alpine:20200626
 RUN apk add --no-cache \
-    openjdk11-jre-headless=11.0.7_p10-r1
+    openjdk11-jre-headless=11.0.8_p10-r0
 
 # App user
 ARG APP_USER="mindustry"
@@ -13,7 +13,7 @@ ARG APP_BIN="/opt/server.jar"
 ADD "https://github.com/Anuken/Mindustry/releases/download/v$APP_VERSION/server-release.jar" "$APP_BIN"
 RUN chmod 644 "$APP_BIN"
 
-# EULA and Volumes
+# Volumes
 ARG DATA_DIR="/mindustry"
 RUN mkdir "$DATA_DIR" && \
     chown -R "$APP_USER":"$APP_USER" "$DATA_DIR"
