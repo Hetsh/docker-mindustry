@@ -3,7 +3,7 @@ Super small and simple vanilla mindustry server.
 
 ## Running the server
 ```bash
-docker run --detach --interactive --name mindustry --publish 6567:6567 hetsh/mindustry
+docker run --detach --interactive --name mindustry --publish 6567:6567/tcp --publish 6567:6567/udp hetsh/mindustry
 ```
 `--interactive` enables passing commands to the running server (required for shutdown).
 
@@ -18,10 +18,9 @@ Because the mindustry server does not catch the `SIGTERM` signal that is sent by
 MP="/path/to/storage"
 mkdir -p "$MP"
 echo "eula=true" > "$MP/eula.txt"
-chown -R 1357:1357 "$MP"
+chown -R 1368:1368 "$MP"
 ```
-`1357` is the numerical id of the user running the server (see Dockerfile).
-Mojang also requires you to accept their EULA. Honestly, you would just klick 'accept' anyway...
+`1368` is the numerical id of the user running the server (see Dockerfile).
 Start the server with the additional mount flag:
 ```bash
 docker run --mount type=bind,source=/path/to/storage,target=/mindustry ...
