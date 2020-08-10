@@ -20,10 +20,13 @@ chown -R 1368:1368 "$MP"
 `1368` is the numerical id of the user running the server (see Dockerfile).
 
 ## Automate startup and shutdown via systemd
+The systemd unit can be found in my GitHub [repository](https://github.com/Hetsh/docker-mindustry).
 ```bash
 systemctl enable mindustry@<port> --now
 ```
-The systemd unit can be found in my [GitHub](https://github.com/Hetsh/docker-mindustry) repository. Individual server instances are distinguished by host-port. By default, the systemd service assumes `/apps/mindustry/<port>` for persistent storage.
+Individual server instances are distinguished by host-port.
+By default, the systemd service assumes `/apps/mindustry/<port>` for persistent storage and `/etc/localtime` for timezone.
+Since this is a personal systemd unit file, you might need to adjust some parameters to suit your setup.
 
 ## Fork Me!
 This is an open project (visit [GitHub](https://github.com/Hetsh/docker-mindustry)). Please feel free to ask questions, file an issue or contribute to it.
