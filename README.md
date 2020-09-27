@@ -1,3 +1,5 @@
+**This Project is still work in progress.**
+
 # Mindustry
 Super small and simple mindustry server.
 
@@ -29,4 +31,5 @@ By default, the systemd service assumes `/apps/mindustry/<port>` for persistent 
 Since this is a personal systemd unit file, you might need to adjust some parameters to suit your setup.
 
 ## Fork Me!
-This is an open project (visit [GitHub](https://github.com/Hetsh/docker-mindustry)). Please feel free to ask questions, file an issue or contribute to it.
+This is an open project (visit [GitHub](https://github.com/Hetsh/docker-mindustry)).
+Please feel free to ask questions, file an issue or contribute to it.
