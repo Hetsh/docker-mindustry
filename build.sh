@@ -22,10 +22,10 @@ fi
 # Build the image
 APP_NAME="mindustry"
 IMG_NAME="hetsh/$APP_NAME"
-docker build --tag "$IMG_NAME" --tag "$IMG_NAME:$(git describe --tags --abbrev=0)" .
+docker build --tag "$IMG_NAME:latest" --tag "$IMG_NAME:$_NEXT_VERSION" .
 
-# Start the test
 case "${1-}" in
+	# Test with default configuration
 	"--test")
 		docker run \
 		--rm \
@@ -37,9 +37,11 @@ case "${1-}" in
 		--name "$APP_NAME" \
 		"$IMG_NAME"
 	;;
+	# Push image to docker hub
 	"--upload")
 		if ! tag_exists "$IMG_NAME"; then
-			docker push "$IMG_NAME"
+			docker push "$IMG_NAME:latest"
+			docker push "$IMG_NAME:$_NEXT_VERSION"
 		fi
 	;;
 esac
