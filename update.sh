@@ -20,12 +20,7 @@ assert_dependency "curl"
 update_image "library/alpine" "Alpine Linux" "false" "\d{8}"
 
 # Mindustry Server
-CURRENT_APP_VERSION="${_CURRENT_VERSION%-*}"
-NEW_APP_VERSION=$(curl --silent --location "https://api.github.com/repos/Anuken/Mindustry/releases/latest" | jq -r ".tag_name" | sed "s/^v//")
-if [ "$CURRENT_APP_VERSION" != "$NEW_APP_VERSION" ]; then
-	prepare_update "APP_VERSION" "Mindustry Server" "$CURRENT_APP_VERSION" "$NEW_APP_VERSION"
-	update_version "$NEW_APP_VERSION"
-fi
+update_github "Anuken/Mindustry" "Mindustry Server" "APP_VERSION" "\d+\.\d+"
 
 # OpenJRE
 update_pkg "openjdk11-jre-headless" "OpenJRE" "false" "https://pkgs.alpinelinux.org/package/edge/community/x86_64" "(\d+\.)+\d+_p\d+-r\d+"
