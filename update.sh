@@ -20,7 +20,7 @@ assert_dependency "curl"
 update_image "library/alpine" "Alpine Linux" "false" "\d{8}"
 
 # Mindustry Server
-update_github "Anuken/Mindustry" "Mindustry Server" "APP_VERSION" "\d+\.\d+"
+update_github "Anuken/Mindustry" "Mindustry Server" "APP_VERSION" "(\d+\.)*\d+"
 
 # OpenJRE
 update_pkg "openjdk11-jre-headless" "OpenJRE" "false" "https://pkgs.alpinelinux.org/package/edge/community/x86_64" "(\d+\.)+\d+_p\d+-r\d+"
