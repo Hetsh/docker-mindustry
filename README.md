@@ -5,8 +5,9 @@ Super small and simple mindustry server.
 
 ## Running the server
 ```bash
-docker run --detach --name mindustry --publish 6567:6567/tcp --publish 6567:6567/udp hetsh/mindustry
+docker run --tty --interactive --name mindustry --publish 6567:6567/tcp --publish 6567:6567/udp hetsh/mindustry
 ```
+If you want to run the server in the background replace `--tty --interactive` with `--detach`.
 
 ## Stopping the container
 ```bash
