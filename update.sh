@@ -23,7 +23,7 @@ update_image "amd64/alpine" "Alpine Linux" "false" "\d{8}"
 update_github "Anuken/Mindustry" "Mindustry Server" "APP_VERSION" "(\d+\.)*\d+"
 
 # OpenJRE
-update_pkg "openjdk16-jre-headless" "OpenJRE" "false" "https://pkgs.alpinelinux.org/package/edge/testing/x86_64" "(\d+\.)+\d+_p\d+-r\d+"
+update_pkg "openjdk16-jre-headless" "OpenJRE" "false" "https://pkgs.alpinelinux.org/package/edge/community/x86_64" "(\d+\.)+\d+_p\d+-r\d+"
 
 if ! updates_available; then
 	#echo "No updates available."
