@@ -1,7 +1,7 @@
 FROM amd64/alpine:20220328
 RUN apk update && \
     apk add --no-cache \
-        openjdk16-jre-headless=16.0.2_p7-r1
+        openjdk16-jre-headless=16.0.2_p7-r2
 
 # App user
 ARG APP_USER="mindustry"
