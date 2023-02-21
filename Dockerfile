@@ -9,7 +9,7 @@ ARG APP_UID=1368
 RUN adduser --disabled-password --uid "$APP_UID" --no-create-home --gecos "$APP_USER" --shell /sbin/nologin "$APP_USER"
 
 # Server binary
-ARG APP_VERSION=141.3
+ARG APP_VERSION=142
 ARG APP_BIN="/opt/server.jar"
 RUN wget \
         --quiet \
