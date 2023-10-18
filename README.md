@@ -21,6 +21,10 @@ mkdir -p "$MP"
 chown -R 1368:1368 "$MP"
 ```
 `1368` is the numerical id of the user running the server (see Dockerfile).
+Start the server with the additional mount flag:
+```bash
+docker run --mount "type=bind,source=$MP,target=/mindustry" ...
+```
 
 ## Automate startup and shutdown via systemd
 The systemd unit can be found in my GitHub [repository](https://github.com/Hetsh/docker-mindustry).
